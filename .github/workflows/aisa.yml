@@ -22,3 +22,13 @@ jobs:
       - run: python check_aisa.py
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
+
+      - name: Save state
+        run: |
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+
+          git add state.json
+
+          git diff --cached --quiet || git commit -m "Update state"
+          git push
