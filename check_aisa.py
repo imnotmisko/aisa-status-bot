@@ -5,6 +5,7 @@ import json
 
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
+
 r = requests.post(
     WEBHOOK,
     json={"content": "🧪 GitHub Action funguje"},
