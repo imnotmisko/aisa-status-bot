@@ -73,7 +73,7 @@ elif previous != current:
         send_discord(
             f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹\n"
             f"||@everyone|| 📅 [{timestamp}] \n"
-            f" 🟢 **AISA je opäť dostupná.** "
+            f" 🟢 **AISA je opäť dostupná.** \n"
             f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹"
         )
     
@@ -81,14 +81,14 @@ elif previous != current:
         send_discord(
             f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹\n"
             f"||@everyone|| 📅 [{timestamp}] \n"
-            f" 🔴 **AISA je nedostupná.** "
+            f" 🔴 **AISA je nedostupná.** \n"
             f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹"
         )
 
     else:
         send_discord(
             f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹\n"
-            "||@everyone|| 🟡 **Nepodarilo sa zistiť stav AISA.**"
+            "||@everyone|| 🟡 **Nepodarilo sa zistiť stav AISA.** \n"
             f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹"
         )
 
