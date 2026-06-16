@@ -7,26 +7,31 @@ WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
 STATE_FILE = "state.json"
 
+
 def get_aisa_state():
-    html = requests.get(
-        "https://status.fi.muni.cz",
-        timeout=10
-    ).text
+    try:
+        html = requests.get(
+            "https://status.fi.muni.cz",
+            timeout=10
+        ).text
 
-    soup = BeautifulSoup(html, "html.parser")
-    text = soup.get_text(" ", strip=True)
+        soup = BeautifulSoup(html, "html.parser")
+        text = soup.get_text(" ", strip=True)
 
-    idx = text.find("Aisa")
+        idx = text.find("Aisa")
 
-    if idx == -1:
+        if idx == -1:
+            return "UNKNOWN"
+
+        snippet = text[idx:idx + 100]
+
+        if "OK" in snippet:
+            return "UP"
+
+        return "DOWN"
+
+    except Exception:
         return "UNKNOWN"
-
-    snippet = text[idx:idx + 100]
-
-    if "OK" in snippet:
-        return "UP"
-
-    return "DOWN"
 
 
 def load_state():
@@ -61,19 +66,23 @@ if previous is None:
 
 elif previous != current:
 
+    timestamp = datetime.now().strftime("%d.%m.%Y %H:%M")
+
     if current == "UP":
         send_discord(
-            "@everyone 🟢 AISA je opäť dostupná."
+            f"@everyone 🟢 **AISA je opäť dostupná.** "
+            f"📅 [{timestamp}]"
         )
-
+    
     elif current == "DOWN":
         send_discord(
-            "@everyone 🔴 AISA je nedostupná."
+            f"@everyone 🔴 **AISA je nedostupná.** "
+            f"📅 [{timestamp}]"
         )
 
     else:
         send_discord(
-            "@everyone 🟡 Stav AISA sa nepodarilo zistiť."
+            "@everyone 🟡 **Nepodarilo sa zistiť stav AISA.**"
         )
 
     save_state(current)
