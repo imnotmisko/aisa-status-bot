@@ -46,12 +46,7 @@ requests.post(
     WEBHOOK,
     json={
         "content":
-        f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹\n"
-        f"📅 Dátum: {today}\n"
-        f"-----------------------------\n"
-        f"✅ AISA monitor je aktívny.\n"
-        f"Aktuálny stav: {emoji} {state} \n"
-        f"🔹🔹🔹🔹🔹🔹🔹🔹🔹🔹"
+        f" {today} ✅ {emoji} {state} "
     },
     timeout=10
 )
