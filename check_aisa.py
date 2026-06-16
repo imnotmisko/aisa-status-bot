@@ -71,19 +71,19 @@ elif previous != current:
 
     if current == "UP":
         send_discord(
-            f"@everyone 🟢 **AISA je opäť dostupná.** \n"
+            f"||@everyone|| 🟢 **AISA je opäť dostupná.** \n"
             f"             📅 [{timestamp}]"
         )
     
     elif current == "DOWN":
         send_discord(
-            f"@everyone 🔴 **AISA je nedostupná.** \n"
+            f"||@everyone|| 🔴 **AISA je nedostupná.** \n"
             f"             📅 [{timestamp}]"
         )
 
     else:
         send_discord(
-            "@everyone 🟡 **Nepodarilo sa zistiť stav AISA.**"
+            "||@everyone|| 🟡 **Nepodarilo sa zistiť stav AISA.**"
         )
 
     save_state(current)
