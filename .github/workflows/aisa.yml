@@ -8,6 +8,9 @@ on:
 
 jobs:
   monitor:
+    permissions:
+      contents: write
+
     runs-on: ubuntu-latest
 
     steps:
