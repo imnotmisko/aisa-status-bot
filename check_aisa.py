@@ -5,6 +5,12 @@ import json
 
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
+requests.post(
+    WEBHOOK,
+    json={"content": "🧪 GitHub Action funguje"},
+    timeout=10
+)
+
 STATE_FILE = "state.json"
 
 
