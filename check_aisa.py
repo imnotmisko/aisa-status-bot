@@ -17,6 +17,8 @@ r = requests.post(
 print("Webhook status:", r.status_code)
 print("Webhook response:", r.text)
 
+STATE_FILE = "state.json"
+
 def get_aisa_state():
     html = requests.get(
         "https://status.fi.muni.cz",
