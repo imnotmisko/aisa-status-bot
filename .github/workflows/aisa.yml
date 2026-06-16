@@ -2,7 +2,7 @@ name: AISA Monitor
 
 on:
   schedule:
-    - cron: "*/1 * * * *"
+    - cron: "*/3 * * * *"
 
   workflow_dispatch:
 
