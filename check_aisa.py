@@ -7,16 +7,6 @@ import json
 
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
-
-r = requests.post(
-    WEBHOOK,
-    json={"content": "🧪 GitHub Action funguje"},
-    timeout=10
-)
-
-print("Webhook status:", r.status_code)
-print("Webhook response:", r.text)
-
 STATE_FILE = "state.json"
 
 def get_aisa_state():
