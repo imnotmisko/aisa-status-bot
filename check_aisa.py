@@ -2,6 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import os
 import json
+from datetime import datetime
 
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
