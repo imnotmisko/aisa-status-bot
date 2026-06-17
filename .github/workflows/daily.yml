@@ -2,7 +2,7 @@ name: Daily Status
 
 on:
   schedule:
-    - cron: "* * * * *"
+    - cron: "*/1 * * * *"
 
   workflow_dispatch:
 
