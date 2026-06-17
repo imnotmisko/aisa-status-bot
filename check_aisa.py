@@ -4,6 +4,8 @@ import os
 import json
 from datetime import datetime
 
+print("TEST TEST")
+
 WEBHOOK = os.environ["DISCORD_WEBHOOK"]
 
 STATE_FILE = "state.json"
