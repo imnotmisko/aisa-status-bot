@@ -1,3 +1,5 @@
+print("DAILY STATUS RUN")
+
 import requests
 from bs4 import BeautifulSoup
 import os
